@@ -1,0 +1,347 @@
+/* General Body and Background Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    background-clip: url('https://marketplace.canva.com/EAF8Zv0UMuk/1/document_1440w/canva-kNtqc2al46c.mp4');
+    line-height: 1.6;
+    background-color: #f4f4f4; /* Fallback background color */
+    background-image: url('https://marketplace.canva.com/EAF8Zv0UMuk/1/document_1440w/canva-kNtqc2al46c.mp4'); /* Replace with your desired background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-attachment: fixed; /* Keep background fixed while scrolling */
+    background-position: center; /* Center the background image */
+    /* If you want a video background: */
+    /* background: none; /* Remove image background */
+    /* You'd embed a <video> element directly in HTML with `position: fixed` and `z-index: -1` */
+}
+
+/* Optional: Overlay for better text readability on background image/video */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 79, 95, 0.6); /* Dark semi-transparent overlay */
+    z-index: -1;
+}
+
+/* Hero Section (Header) */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh; /* Full viewport height */
+    color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Remove background-image from here if using body background */
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly transparent background for content */
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px #143e5780;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(41, 100, 117, 0.7);
+}
+
+.hero .tagline {
+    font-size: 1.5em;
+    margin-top: 0;
+    font-weight: 300;
+}
+
+/* Navigation */
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.main-nav ul li {
+    margin: 0 15px;
+}
+
+.main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.main-nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Main Content Sections */
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-content {
+    background-color: white;
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-content h2 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #0056b3;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-content h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #007bff;
+    border-radius: 2px;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.skill-category {
+    background-color: rgb(255, 255, 255);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid hsl(310, 100%, 50%);
+    transition: transform 0.2s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+}
+
+.skill-category h3 {
+    color: #b30086;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category ul li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+    font-size: 1.1em;
+}
+
+.skill-category ul li:last-child {
+    border-bottom: none;
+}
+
+/* Projects Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(124, 122, 17, 0.05);
+    border-top: 5px solid #a19f24; /* Green border for projects */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px lab(93.25% -9.86 40.9 / 0.1);
+}
+
+.project-card h3 {
+    color: #28a745;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.6em;
+}
+
+.project-card p {
+    font-size: 1.05em;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Allow description to take up available space */
+}
+
+.project-card a {
+    display: inline-block;
+    color: hsl(83, 67%, 37%);
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 15px;
+    transition: color 0.2s ease;
+}
+
+.project-card a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Hobbies List */
+.hobbies-list ul {
+    list-style: disc inside;
+    padding-left: 20px;
+    margin-top: 15px;
+}
+
+.hobbies-list ul li {
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer-content h2 {
+    color: white;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+.footer-content p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+}
+
+.contact-links .contact-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    margin: 0 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-links .contact-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+.footer-content p:last-child {
+    margin-top: 30px;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero .tagline {
+        font-size: 1.2em;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+    }
+
+    .main-nav ul li {
+        margin: 10px 0;
+    }
+
+    .section-content {
+        padding: 25px;
+    }
+
+    .section-content h2 {
+        font-size: 2em;
+    }
+
+    .skills-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-links .contact-button {
+        display: block;
+        margin: 15px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero .tagline {
+        font-size: 1em;
+    }
+
+    .section-content h2 {
+        font-size: 1.8em;
+    }
+
+    footer {
+        padding: 30px 15px;
+    }
+}
